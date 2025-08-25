@@ -1,0 +1,236 @@
+/* 音频转文字Web应用样式文件 */
+
+/* 上传区域样式 */
+.upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: #0d6efd;
+    background-color: #e7f1ff;
+}
+
+.upload-area.dragover {
+    border-color: #0d6efd;
+    background-color: #e7f1ff;
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.upload-content h4 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+/* 阶段指示器 */
+.stage-indicator {
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.stage-indicator i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stage-indicator.active {
+    background-color: #0d6efd;
+    color: white;
+    transform: scale(1.05);
+}
+
+.stage-indicator.completed {
+    background-color: #198754;
+    color: white;
+}
+
+/* 功能特色区域 */
+.feature-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.feature-item i {
+    margin-bottom: 0.5rem;
+}
+
+/* 进度条动画 */
+.progress-bar-animated {
+    animation: progress-bar-stripes 1s linear infinite;
+}
+
+/* 卡片阴影效果 */
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* 按钮状态 */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    transform: none;
+}
+
+/* 文件信息区域 */
+#fileInfo {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 结果区域 */
+#resultArea {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+    
+    .upload-icon {
+        font-size: 2rem;
+    }
+    
+    .upload-content h4 {
+        font-size: 1.2rem;
+    }
+    
+    .stage-indicator {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stage-indicator i {
+        font-size: 1.2rem;
+    }
+}
+
+/* 加载状态 */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* 错误状态 */
+.error {
+    border-color: #dc3545 !important;
+    background-color: #f8d7da !important;
+}
+
+/* 成功状态 */
+.success {
+    border-color: #198754 !important;
+    background-color: #d1eddb !important;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* 思维导图预览 */
+#mindmapFrame {
+    border: none;
+    border-radius: 8px;
+}
+
+/* 暗色主题支持 */
+@media (prefers-color-scheme: dark) {
+    .upload-area {
+        background-color: #343a40;
+        border-color: #495057;
+        color: #f8f9fa;
+    }
+    
+    .upload-area:hover {
+        background-color: #495057;
+        border-color: #0d6efd;
+    }
+    
+    .stage-indicator {
+        background-color: #343a40;
+        color: #f8f9fa;
+    }
+}

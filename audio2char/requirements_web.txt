@@ -1,0 +1,24 @@
+# 音频转文字一体化Web应用依赖
+
+# Web框架和实时通信
+Flask==2.3.3
+Flask-SocketIO==5.3.6
+python-socketio==5.8.0
+python-engineio==4.7.1
+eventlet==0.33.3
+
+# 配置管理
+python-dotenv==1.0.0
+
+# 音频处理依赖
+torch>=1.13.0
+openai-whisper>=20230314
+pydub>=0.25.1
+requests>=2.28.0
+numpy<2.0
+
+# 说话人分离
+pyannote.audio>=3.1.0
+
+# 工具库
+Werkzeug>=2.3.7
